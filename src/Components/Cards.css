@@ -1,0 +1,144 @@
+.flip-card {
+  width: 1000px;
+  height: 300px;
+  display: flex;
+  perspective: 1000px;
+  margin-top: 150px;
+}
+
+.flip-card-inner-one, .flip-card-inner-two, .flip-card-inner-three, .flip-card-inner-four {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 20px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-inner-one:hover {
+  transform: rotateY(180deg);
+  transition-duration: 0.3s;
+}
+.flip-card-inner-two:hover {
+  transform: rotateY(180deg);
+  transition-duration: 0.3s;
+}
+.flip-card-inner-three:hover {
+  transform: rotateY(180deg);
+  transition-duration: 0.3s;
+}
+.flip-card-inner-four:hover {
+  transform: rotateY(180deg);
+  transition-duration: 0.3s;
+}
+
+.flip-card-front-one, .flip-card-front-two, .flip-card-front-three, .flip-card-front-four, .flip-card-back-one, .flip-card-back-two, .flip-card-back-three, .flip-card-back-four {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front-one, .flip-card-front-two, .flip-card-front-three, .flip-card-front-four {
+  background-color: #2e78a7;
+  background-image: url('../assets/bio.png');
+  background-size: cover;
+  background-position: center;
+  
+  color: black;
+}
+
+.flip-card-back-one {
+  background-color: #780000;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back-two {
+  background-color: #c1121f;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back-three {
+  background-color: #003049;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back-four {
+  background-color: #fcbf49;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.faicon {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-top: 120px;
+}
+
+.caption {
+    position: relative;
+    width: 210px;
+    height: 250px;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transform: rotate(calc(var(--r) * 1deg));
+}
+.aboutme{
+  font-size: 17px;
+  font-family: 'Marhey', sans-serif;
+  color: #000000;
+  margin-top: 30px;
+  text-align: right;
+  list-style: none;
+  direction: rtl;
+  padding-right: 10px;
+}
+.aboutme li {
+  margin-bottom: 20px;
+  transition: 0.5s;
+  transform: rotate(calc(var(--r) * 1deg));
+  color: #000000;
+}
+.aboutme li::before {
+  content: "▹";
+  color: #2e78a7;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .flip-card {
+    width: 350px;
+    height: 180px;
+    margin-top: 200px;
+  }
+
+  .flip-card-inner-one, .flip-card-inner-two, .flip-card-inner-three {
+    margin: 10px;
+  }
+
+  .faicon {
+    font-size: 1.8em;
+    margin-top: 80px;
+  }
+
+  .caption {
+    width: 80px;
+    height: 150px;
+    font-size: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    margin-left: 8px;
+  }
+}
